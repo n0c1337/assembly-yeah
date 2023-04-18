@@ -1,16 +1,15 @@
-.text
-.global convert_f_to_c
+global convert_f_to_c
+section .text
+    convert_f_to_c:
+        mov    rdx, 0
 
-convert_f_to_c:
-    movl    $0, %edx
+        mov    rsi, rdi ; Fahrenheit value from omglulw c programm
+        sub    rsi, 32  ; substract by 32
+        
+        mov    rax, 5
+        imul   rsi      ; multiply with 5
 
-    movl    %edi, %esi # Fahrenheit value from omglulw c programm
-    sub     $32, %esi # substract by 32
-    
-    movl    $5, %eax
-    imul    %esi      # multiply with 5
-    
-    movl    $9, %esi
-    idiv    %esi
-    
-    ret
+        mov    rsi, 9
+        idiv   rsi      ; divide by 9
+        
+        ret
