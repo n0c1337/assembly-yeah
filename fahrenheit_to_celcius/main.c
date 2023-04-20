@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-extern int convert_f_to_c(int fahrenheit);
+extern float convert_f_to_c(float fahrenheit);
 
 int main() 
 {
